@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Lista from './Lista';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const name = 'Aldo';
+const name = "Aldo";
 
-const jsx = (
-  <>
-    <h1>Hola {name}</h1>
-  </>
-);
+const Jsx = () => {
+  return(
+    <>
+      <h1>Bienvenido {name} a tu lista de compras</h1>
+      <Lista/>
+      
+    </>
+  )
+};
 
-root.render(jsx);
+root.render(<Jsx/>);
 
 
