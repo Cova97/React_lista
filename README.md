@@ -1,2 +1,2 @@
-# React_lista
-Creacion de un React de lista de compras
+# Plantilla
+Creacion de plantilla para web app con react
