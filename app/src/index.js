@@ -11,7 +11,6 @@ const Jsx = () => {
     <>
       <h1>Bienvenido {name} a tu lista de compras</h1>
       <Lista/>
-      
     </>
   )
 };

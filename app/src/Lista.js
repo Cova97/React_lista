@@ -1,36 +1,36 @@
 import React, {useState} from "react";
 
 const Lista = () => {
-    const[lista, setLista] = useState("");
+    const[product, setProduct] = useState("");
+    const[products, setProducts] = useState("");
 
     const onChange = (e) =>{
         console.log(e.target.name);
-        if(e.target.name === "lista"){
-            setLista(e.target.value);
+        if(e.target.name === "product"){
+            setProduct(e.target.value);
         }
     };
 
     const onSubmit = (e) => {
-        console.log(e);
+        console.log(product);
         e.preventDefault();
-        if(lista != ""){
-            alert("Dato guardado")
-        }
-        else{
-            alert("Ingrese dato")
-        }
+        setProducts([...products, product])
     };
-
+    
     return(
         <>
-            <form>
+            <form action="" onSubmit={onSubmit}>
                 <div>
-                    <label>
-                        <input type="text" name="lista" id="lista" value={lista} onChange={onChange}></input>
-                    </label>
+                    <label htmlFor="product">Producto</label>
+                    <input type="text" name="product" id="product" value={product} onChange={onChange}></input>
                 </div>
                 <button>Agregar</button>
             </form>
+            <ul>
+                {products.map((name, i) => {
+                    return <li key={i}>{name}</li>;
+                })}
+            </ul>
         </>
     )
 };
